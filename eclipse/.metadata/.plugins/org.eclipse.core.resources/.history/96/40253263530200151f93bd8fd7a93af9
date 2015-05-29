@@ -1,0 +1,17 @@
+package cz.grossik.projektwow.handler;
+
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import cz.grossik.projektwow.utils.Remover;
+
+public class RecipeHandler {
+	
+	public static void registerRecipes() {
+		Remover.removeAnyRecipe(new ItemStack(Items.iron_boots));
+		Remover.removeAnyRecipe(new ItemStack(Items.iron_chestplate));
+		Remover.removeAnyRecipe(new ItemStack(Items.iron_leggings));
+		Remover.removeAnyRecipe(new ItemStack(Items.iron_helmet));
+
+	}
+
+}
