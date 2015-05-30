@@ -4,15 +4,10 @@ import java.io.File;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -22,7 +17,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cz.grossik.projektwow.command.Command_Thief;
 import cz.grossik.projektwow.command.Command_Warrior;
 import cz.grossik.projektwow.command.Command_Wizard;
@@ -31,6 +25,7 @@ import cz.grossik.projektwow.handler.GuiHandler;
 import cz.grossik.projektwow.handler.RecipeHandler;
 import cz.grossik.projektwow.items.ItemHandler;
 import cz.grossik.projektwow.proxy.ProxyCommon;
+import cz.grossik.projektwow.utils.EventHelper;
 import cz.grossik.projektwow.warrior.entity.EntityWoodenSpear;
 import cz.grossik.projektwow.world_type.ProjektWow_WorldType;
 
@@ -65,15 +60,9 @@ public class ProjektWow {
     public void preInit(FMLPreInitializationEvent event) {
     	proxy.registerRenderers();
    	    EntityRegistry.registerModEntity(EntityWoodenSpear.class, EntityWoodenSpear.class.getSimpleName(), 7, this, 200, 2, true);
-   	    FMLCommonHandler.instance().bus().register(new Event());
         NetworkRegistry.INSTANCE.registerGuiHandler(ProjektWow.instance, new GuiHandler());
-        
-        GameRegistry.registerItem(ItemHandler.Sword, "SwordTest");
-        GameRegistry.registerItem(ItemHandler.Wand, "WandTest");
-        GameRegistry.registerItem(ItemHandler.Knife, "KnifeTest");
-        
-        GameRegistry.registerItem(ItemHandler.WoodenSpear, "wooden_spear");
-
+        ItemHandler.registerItems();
+        EventHelper.register(EventHelper.Type.BOTH, new Event());
     }
     
 	@EventHandler
