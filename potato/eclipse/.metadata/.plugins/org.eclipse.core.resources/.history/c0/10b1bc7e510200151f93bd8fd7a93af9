@@ -1,9 +1,0 @@
-package cz.grossik.projektwow.handler;
-
-public class RecipeHandler {
-	
-	public static void registerRecipes() {
-		
-	}
-
-}
