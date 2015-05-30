@@ -38,7 +38,7 @@ import cz.grossik.projektwow.world_type.ProjektWow_WorldType;
 public class ProjektWow {
 	
     public static final String MODID = "Projekt Wow";
-    public static final String VERSION = "0.0.23";
+    public static final String VERSION = "0.0.24";
 	@Instance(MODID)
 	public static ProjektWow instance;
     @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
