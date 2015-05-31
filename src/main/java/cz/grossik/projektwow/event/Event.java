@@ -1,8 +1,10 @@
 package cz.grossik.projektwow.event;
 
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
@@ -29,9 +31,11 @@ public class Event extends Thread {
 	public void LivingHurt(LivingHurtEvent event) {
 		if(event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)event.entityLiving;
-			if(player.getCurrentEquippedItem() == new ItemStack(ItemHandler.Shield)) {
+			ItemStack stack = player.getHeldItem();
+			//if(event.source.getSourceOfDamage() instanceof EntityZombie) {
+			if(stack != null && stack.getItem() == ItemHandler.Shield && player.isUsingItem() == true) {
 				event.ammount = 0F;
-			}
+		    }
 		}
 	}
- }
+}

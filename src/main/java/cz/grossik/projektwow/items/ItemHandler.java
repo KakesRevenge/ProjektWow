@@ -14,7 +14,7 @@ public class ItemHandler {
 		
 	//WARRIOR
 	public static Item WoodenSpear = new Item_WoodenSpear().setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("wooden_spear");
-	public static Item Shield = new Shield();
+	public static Item Shield = new Shield(ToolMaterial.IRON);
 	
 	/**TEST**/
 	public static Item Sword = new Item_TestSword(ToolMaterials.WARRIOR).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Sword");
