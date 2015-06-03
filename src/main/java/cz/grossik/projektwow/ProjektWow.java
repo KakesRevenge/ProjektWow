@@ -20,21 +20,19 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cz.grossik.projektwow.command.Command_Thief;
 import cz.grossik.projektwow.command.Command_Warrior;
 import cz.grossik.projektwow.command.Command_Wizard;
-import cz.grossik.projektwow.event.Event;
 import cz.grossik.projektwow.handler.GuiHandler;
 import cz.grossik.projektwow.handler.RecipeHandler;
+import cz.grossik.projektwow.handler.WoWEventHandler;
 import cz.grossik.projektwow.items.ItemHandler;
 import cz.grossik.projektwow.proxy.ProxyCommon;
 import cz.grossik.projektwow.utils.EventHelper;
 import cz.grossik.projektwow.warrior.entity.EntityWoodenSpear;
 import cz.grossik.projektwow.world_type.ProjektWow_WorldType;
 
-@Mod(modid = ProjektWow.MODID, version = ProjektWow.VERSION)
+@Mod(modid = Reference.MODID,name = Reference.NAME, version = Reference.VERSION)
 public class ProjektWow {
 	
-    public static final String MODID = "Projekt Wow";
-    public static final String VERSION = "0.0.24";
-	@Instance(MODID)
+	@Instance(Reference.MODID)
 	public static ProjektWow instance;
     @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
     public static ProxyCommon proxy;
@@ -62,7 +60,7 @@ public class ProjektWow {
    	    EntityRegistry.registerModEntity(EntityWoodenSpear.class, EntityWoodenSpear.class.getSimpleName(), 7, this, 200, 2, true);
         NetworkRegistry.INSTANCE.registerGuiHandler(ProjektWow.instance, new GuiHandler());
         ItemHandler.registerItems();
-        EventHelper.register(EventHelper.Type.BOTH, new Event());
+        EventHelper.register(EventHelper.Type.BOTH, new WoWEventHandler());
     }
     
 	@EventHandler
