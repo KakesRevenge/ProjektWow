@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.items.ItemHandler;
+import cz.grossik.projektwow.handler.ItemHandler;
 
 public class EntityWoodenSpear extends Entity implements IProjectile
 {

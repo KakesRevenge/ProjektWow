@@ -14,11 +14,11 @@ import cz.grossik.projektwow.Reference;
 @Author KakesRevenge
  */
 
-public class Shield extends ItemSword {
+public class ItemShield extends ItemSword {
 	
 	private IIcon swordIcon,shieldIcon;
 	
-	public Shield(ToolMaterial material) {
+	public ItemShield(ToolMaterial material) {
 		super(material);
 		this.setUnlocalizedName("Shield");
 		this.setCreativeTab(ProjektWow.ProjektWowTab);

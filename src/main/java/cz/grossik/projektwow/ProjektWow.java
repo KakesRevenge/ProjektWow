@@ -4,8 +4,6 @@ import java.io.File;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.ai.attributes.IAttribute;
-import net.minecraft.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import cpw.mods.fml.common.Mod;
@@ -21,9 +19,9 @@ import cz.grossik.projektwow.command.Command_Thief;
 import cz.grossik.projektwow.command.Command_Warrior;
 import cz.grossik.projektwow.command.Command_Wizard;
 import cz.grossik.projektwow.handler.GuiHandler;
+import cz.grossik.projektwow.handler.ItemHandler;
 import cz.grossik.projektwow.handler.RecipeHandler;
 import cz.grossik.projektwow.handler.WoWEventHandler;
-import cz.grossik.projektwow.items.ItemHandler;
 import cz.grossik.projektwow.proxy.ProxyCommon;
 import cz.grossik.projektwow.utils.EventHelper;
 import cz.grossik.projektwow.warrior.entity.EntityWoodenSpear;
@@ -36,9 +34,7 @@ public class ProjektWow {
 	public static ProjektWow instance;
     @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
     public static ProxyCommon proxy;
-        
-    public static final IAttribute attackDamages = new RangedAttribute("generic.attackDamages", 2.0D, 0.0D, Double.MAX_VALUE);
-    
+            
     public static CreativeTabs ProjektWowTab = new ProjektWowTab("ProjektWow");    
     public static Configuration config = new Configuration(new File("config/projekt_wow/class.cfg"));
 
@@ -57,8 +53,8 @@ public class ProjektWow {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     	proxy.registerRenderers();
-   	    EntityRegistry.registerModEntity(EntityWoodenSpear.class, EntityWoodenSpear.class.getSimpleName(), 7, this, 200, 2, true);
-        NetworkRegistry.INSTANCE.registerGuiHandler(ProjektWow.instance, new GuiHandler());
+    	EntityRegistry.registerModEntity(EntityWoodenSpear.class, EntityWoodenSpear.class.getSimpleName(), 7, this, 200, 2, true);
+    	NetworkRegistry.INSTANCE.registerGuiHandler(ProjektWow.instance, new GuiHandler());
         ItemHandler.registerItems();
         EventHelper.register(EventHelper.Type.BOTH, new WoWEventHandler());
     }

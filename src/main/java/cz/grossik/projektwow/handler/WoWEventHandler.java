@@ -7,7 +7,6 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.items.ItemHandler;
 
 /**
 @Author KakesRevenge
