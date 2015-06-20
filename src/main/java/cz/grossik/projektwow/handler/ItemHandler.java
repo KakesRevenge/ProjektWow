@@ -56,6 +56,14 @@ public class ItemHandler {
         GameRegistry.registerItem(DiamondChestplate, "chestplateDiamond");
         GameRegistry.registerItem(DiamondLeggings, "leggingsDiamond");
         GameRegistry.registerItem(DiamondBoots, "bootsDiamond");
+        GameRegistry.registerItem(GoldHelmet, "helmetGold");
+        GameRegistry.registerItem(GoldChestplate, "chestplateGold");
+        GameRegistry.registerItem(GoldLeggings, "leggingsGold");
+        GameRegistry.registerItem(GoldBoots, "bootsGold");
+        GameRegistry.registerItem(IronHelmet, "helmetIron");
+        GameRegistry.registerItem(IronChestplate, "chestplateIron");
+        GameRegistry.registerItem(IronLeggings, "leggingsIron");
+        GameRegistry.registerItem(IronBoots, "bootsIron");
         
         GameRegistry.registerItem(ItemHandler.WoodenSpear, "wooden_spear");
 	}

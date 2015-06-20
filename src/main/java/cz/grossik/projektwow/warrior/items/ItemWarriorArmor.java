@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 import cz.grossik.projektwow.ProjektWow;
+import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.handler.PlayerClassHandler;
 import cz.grossik.projektwow.handler.WoWEventHandler;
 
 /** @Autor Grossik 
@@ -38,31 +40,49 @@ public class ItemWarriorArmor extends ItemArmor {
     @Override
     public boolean isValidArmor(ItemStack stack, int armorType, Entity entity)
     {
-        if (WoWEventHandler.player_class.getString() == ProjektWow.Warrior)
-        {
-            return ((ItemWarriorArmor)this).armorType == armorType;
-        }
-        else
-        {
-        	if(entity instanceof EntityPlayer) {
-    		 EntityPlayer player = (EntityPlayer)entity;
-             player.addChatComponentMessage(new ChatComponentTranslation("musis_byt_warrior"));
+    	if(entity instanceof EntityPlayer) {
+   		 EntityPlayer player = (EntityPlayer)entity;
+        PlayerClassHandler props = PlayerClassHandler.get(player);
+
+        int playerclass = props.CurrentClass;
+  
+        switch(playerclass) {
+        case Reference.Warrior:
+            return true;  
+		case Reference.Unset:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
+        case Reference.Thief:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
+        case Reference.Wizard:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
         	}
-        	return false;
-        }
+         }
+    	return false;
     }
     
     @Override
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player)
     {
-    	if(WoWEventHandler.player_class.getString() == ProjektWow.Warrior)
-    	{
+        PlayerClassHandler props = PlayerClassHandler.get(player);
+        int playerclass = props.CurrentClass;
+  
+        switch(playerclass) {
+        case Reference.Warrior:
     	    return this.UseItem(itemstack, world, player);
-    	}
-    	else
-    	{
-            player.addChatComponentMessage(new ChatComponentTranslation("musis_byt_warrior"));
-    	}
+            break;
+		case Reference.Unset:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
+        case Reference.Thief:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
+        case Reference.Wizard:
+            player.addChatComponentMessage(new ChatComponentTranslation("Musis byt Warrior"));
+            break;
+      }
 		return itemstack;
     }
 }
