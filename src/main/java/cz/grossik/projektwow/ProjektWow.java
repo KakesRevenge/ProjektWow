@@ -16,6 +16,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cz.grossik.projektwow.command.Thief;
+import cz.grossik.projektwow.command.Unset;
 import cz.grossik.projektwow.command.Warrior;
 import cz.grossik.projektwow.command.Wizard;
 import cz.grossik.projektwow.command.GetClass;
@@ -32,7 +33,7 @@ import cz.grossik.projektwow.world_type.ProjektWow_WorldType;
 public class ProjektWow {
 	@Instance(Reference.MODID)
 	public static ProjektWow instance;
-    @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
+    @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommo/n")
     public static ProxyCommon proxy;
             
     public static CreativeTabs ProjektWowTab = new ProjektWowTab("ProjektWow"); 
@@ -41,6 +42,7 @@ public class ProjektWow {
     public static ICommand wizard = new Wizard();
     public static ICommand thief = new Thief();
     public static ICommand getClass = new GetClass();
+    public static ICommand unset = new Unset();
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -63,5 +65,6 @@ public class ProjektWow {
     	event.registerServerCommand(wizard);
     	event.registerServerCommand(thief);
     	event.registerServerCommand(getClass);
+    	event.registerServerCommand(unset);
     }
 }

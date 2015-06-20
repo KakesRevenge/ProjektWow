@@ -1,4 +1,5 @@
 package cz.grossik.projektwow;
+
 /**
 @Author KakesRevenge
  */
@@ -17,5 +18,5 @@ public class Reference {
 	public static String WarriorName ="§6[Warrior]§f";
 	public static String WizardName = "§6[Wizard]§f";
 	public static String ThiefName = "§6[Thief]§f";
-	
+	public static String UnsetName = "§6[Unset]§f";
 }

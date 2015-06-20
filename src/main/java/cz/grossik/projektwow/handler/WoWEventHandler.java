@@ -54,6 +54,9 @@ public class WoWEventHandler {
 		case Reference.Wizard:
 			event.displayname = Reference.WizardName + event.username;
 			break;
+		case Reference.Unset:
+			event.displayname = Reference.UnsetName + event.username;
+			break;
 		}
 	}
 }

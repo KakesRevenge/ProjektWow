@@ -12,11 +12,13 @@ import cz.grossik.projektwow.handler.PlayerClassHandler;
  */
 
 public class Thief extends CommandBase {
-
+	
+	@Override
     public String getCommandName() {
         return "thief";
     }
-
+    
+    @Override
     public String getCommandUsage(ICommandSender CommandSender) {
         return "/thief";
     }
@@ -26,6 +28,7 @@ public class Thief extends CommandBase {
         return true;
     }
     
+    @Override
     public void processCommand(ICommandSender sender, String[] ArrayOfStr) {
      	EntityPlayer player = getCommandSenderAsPlayer(sender);
         String name = player.getCommandSenderName();

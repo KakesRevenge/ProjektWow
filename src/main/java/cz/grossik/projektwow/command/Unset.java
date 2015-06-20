@@ -3,55 +3,51 @@ package cz.grossik.projektwow.command;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import cz.grossik.projektwow.ProjektWow;
 import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.handler.PlayerClassHandler;
+import cz.grossik.projektwow.utils.LogHelper;
 
 /**
 @Author KakesRevenge
  */
 
-public class Wizard extends CommandBase {
+public class Unset extends CommandBase {
 	
 	@Override
-    public String getCommandName() {
-        return "wizard";
+	public String getCommandName() {
+        return "unset";
     }
-    
-    @Override
+
+	@Override
     public String getCommandUsage(ICommandSender par1ICommandSender) {
-        return "/wizard";
+        return "/unset";
     }
-    
-    @Override
+	
+	@Override
 	public boolean canCommandSenderUseCommand(ICommandSender sender) {
-		return true;
+     	EntityPlayer player = getCommandSenderAsPlayer(sender);
+		boolean op = MinecraftServer.getServer().getConfigurationManager().func_152596_g(player.getGameProfile());
+		return op;
 	}
-    
-    @Override
+	
+	@Override
     public void processCommand(ICommandSender sender, String[] ArrayOfStr) {
      	EntityPlayer player = getCommandSenderAsPlayer(sender);
         String name = player.getCommandSenderName();
         PlayerClassHandler props = PlayerClassHandler.get(player);
         int playerclass = props.CurrentClass;
-        
-        switch(playerclass) {
-        case Reference.Unset:
-        	props.CurrentClass = Reference.Wizard;
-        	player.addChatComponentMessage(new ChatComponentText("Now you are a Wizard"));			
-        	player.refreshDisplayName();
-        	break;
-        case Reference.Thief:
-        	player.addChatComponentMessage(new ChatComponentText("You are already a different class"));
-        	break;
-        case Reference.Warrior:
-        	player.addChatComponentMessage(new ChatComponentText("You are already a Wizard"));
-        	break;
-        case Reference.Wizard:
-        	player.addChatComponentMessage(new ChatComponentText("You are already a different class"));
-        	break;
+    	LogHelper.info(playerclass);
+    	
+        if(playerclass != Reference.Unset) {
+        	LogHelper.info(playerclass);
+        	props.CurrentClass = Reference.Unset;
+        	player.addChatComponentMessage(new ChatComponentText("Now you dont have any class"));
         }
-    }   
-}      
+	}
+}

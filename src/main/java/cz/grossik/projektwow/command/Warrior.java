@@ -5,6 +5,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import cz.grossik.projektwow.ProjektWow;
@@ -15,17 +16,24 @@ import cz.grossik.projektwow.handler.PlayerClassHandler;
 @Author KakesRevenge
  */
 
-public class Warrior extends CommandBase
-{			
-	public String getCommandName()
-    {
+public class Warrior extends CommandBase {
+	
+	@Override
+	public String getCommandName() {
         return "warrior";
     }
 
-    public String getCommandUsage(ICommandSender par1ICommandSender)
-    {
+	@Override
+    public String getCommandUsage(ICommandSender par1ICommandSender) {
         return "/warrior";
     }
+	
+	@Override
+	public boolean canCommandSenderUseCommand(ICommandSender sender) {
+		return true;
+	}
+	
+	@Override
     public void processCommand(ICommandSender sender, String[] ArrayOfStr) {
      	EntityPlayer player = getCommandSenderAsPlayer(sender);
         String name = player.getCommandSenderName();
