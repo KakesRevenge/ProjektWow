@@ -15,9 +15,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cz.grossik.projektwow.command.Command_Thief;
-import cz.grossik.projektwow.command.Command_Warrior;
-import cz.grossik.projektwow.command.Command_Wizard;
+import cz.grossik.projektwow.command.Thief;
+import cz.grossik.projektwow.command.Warrior;
+import cz.grossik.projektwow.command.Wizard;
+import cz.grossik.projektwow.command.GetClass;
 import cz.grossik.projektwow.handler.GuiHandler;
 import cz.grossik.projektwow.handler.ItemHandler;
 import cz.grossik.projektwow.handler.RecipeHandler;
@@ -29,26 +30,17 @@ import cz.grossik.projektwow.world_type.ProjektWow_WorldType;
 
 @Mod(modid = Reference.MODID,name = Reference.NAME, version = Reference.VERSION)
 public class ProjektWow {
-	
 	@Instance(Reference.MODID)
 	public static ProjektWow instance;
     @SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
     public static ProxyCommon proxy;
             
-    public static CreativeTabs ProjektWowTab = new ProjektWowTab("ProjektWow");    
-    public static Configuration config = new Configuration(new File("config/projekt_wow/class.cfg"));
-
-	public static Property player_name;
-	public static Property player_class;
-	
-	public static String Warrior = "Warrior";
-	public static String Wizard = "Wizard";
-	public static String Thief = "Thief";
-	public static String nul = "null";
-	
-    public static ICommand warrior = new Command_Warrior();
-    public static ICommand wizard = new Command_Wizard();
-    public static ICommand thief = new Command_Thief();
+    public static CreativeTabs ProjektWowTab = new ProjektWowTab("ProjektWow"); 
+    
+    public static ICommand warrior = new Warrior();
+    public static ICommand wizard = new Wizard();
+    public static ICommand thief = new Thief();
+    public static ICommand getClass = new GetClass();
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -67,8 +59,9 @@ public class ProjektWow {
     
     @EventHandler
     public void ServerLoad(FMLServerStartingEvent event) {	 
-    	event.registerServerCommand(this.warrior);
-    	event.registerServerCommand(this.wizard);
-    	event.registerServerCommand(this.thief);
+    	event.registerServerCommand(warrior);
+    	event.registerServerCommand(wizard);
+    	event.registerServerCommand(thief);
+    	event.registerServerCommand(getClass);
     }
 }

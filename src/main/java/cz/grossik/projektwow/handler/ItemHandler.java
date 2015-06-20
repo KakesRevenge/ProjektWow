@@ -1,16 +1,14 @@
 package cz.grossik.projektwow.handler;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.Item.ToolMaterial;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cz.grossik.projektwow.ProjektWow;
 import cz.grossik.projektwow.items.ToolMaterials;
-import cz.grossik.projektwow.thief.items.ItemKnife;
-import cz.grossik.projektwow.warrior.items.ItemWarriorArmor;
-import cz.grossik.projektwow.warrior.items.ItemTestSword;
-import cz.grossik.projektwow.warrior.items.ItemWoodenSpear;
 import cz.grossik.projektwow.warrior.items.ItemShield;
+import cz.grossik.projektwow.warrior.items.ItemTestSword;
+import cz.grossik.projektwow.warrior.items.ItemWarriorArmor;
+import cz.grossik.projektwow.warrior.items.ItemWoodenSpear;
 import cz.grossik.projektwow.wizard.items.ItemWand;
 
 public class ItemHandler {
@@ -22,7 +20,7 @@ public class ItemHandler {
 	/**TEST**/
 	public static Item Sword = new ItemTestSword(ToolMaterials.WARRIOR).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Sword");
 	
-	//ARMOR
+	//ARMOR	
 	public static Item DiamondHelmet = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 0).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("helmetDiamond").setTextureName("diamond_helmet");
 	public static Item DiamondChestplate = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 1).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("chestplateDiamond").setTextureName("diamond_chestplate");
 	public static Item DiamondLeggings = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 2).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("leggingsDiamond").setTextureName("diamond_leggings");
@@ -36,17 +34,12 @@ public class ItemHandler {
 	/****/
 
 	//THIEF
-    
-	/**TEST**/
-	public static Item Knife = new ItemKnife().setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Knife");
-	/****/
 	
 	//ZBYTEK
 	
 	public static void registerItems() {
 		GameRegistry.registerItem(ItemHandler.Sword, "SwordTest");
         GameRegistry.registerItem(ItemHandler.Wand, "WandTest");
-        GameRegistry.registerItem(ItemHandler.Knife, "KnifeTest");
         GameRegistry.registerItem(ItemHandler.Shield, "Shield");
         GameRegistry.registerItem(DiamondHelmet, "helmetDiamond");
         GameRegistry.registerItem(DiamondChestplate, "chestplateDiamond");

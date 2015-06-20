@@ -2,6 +2,7 @@ package cz.grossik.projektwow.handler;
 
 import java.util.ArrayList;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import cz.grossik.projektwow.utils.RecipeRemover;
@@ -15,10 +16,6 @@ public class RecipeHandler {
 		removeRecipes();
 		initRecipes();
 
-	}
-	
-	public static void initRecipes() {
-		
 	}
 	
 	public static void removeRecipes() {
@@ -54,6 +51,10 @@ public class RecipeHandler {
 		RecipeRemover.removeAnyRecipe(new ItemStack(Items.stone_sword));
 		RecipeRemover.removeAnyRecipe(new ItemStack(Items.bow));
 
+	}
+	
+	public static void initRecipes() {
+		
 	}
 
 }

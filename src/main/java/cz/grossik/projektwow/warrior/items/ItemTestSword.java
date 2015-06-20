@@ -17,6 +17,7 @@ import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.grossik.projektwow.ProjektWow;
+import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.items.ToolMaterials;
 
 public class ItemTestSword extends Item
@@ -84,8 +85,7 @@ public class ItemTestSword extends Item
         return p_77659_1_;
     }
 
-    public boolean func_150897_b(Block p_150897_1_)
-    {
+    public boolean func_150897_b(Block p_150897_1_) {
         return p_150897_1_ == Blocks.web;
     }
 
@@ -106,11 +106,7 @@ public class ItemTestSword extends Item
         return super.getIsRepairable(p_82789_1_, p_82789_2_);
     }
     
-	public void addItemAttributeModifiers(Multimap<String, AttributeModifier> multimap)
-	{
-	    if(ProjektWow.player_class.getString() == ProjektWow.Warrior)
-        {
+	public void addItemAttributeModifiers(Multimap<String, AttributeModifier> multimap) {
          multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifiers", (double)this.warrior, 0));
-        }
 	}
 }
