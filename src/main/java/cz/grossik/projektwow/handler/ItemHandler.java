@@ -21,12 +21,23 @@ public class ItemHandler {
 	public static Item Sword = new ItemTestSword(ToolMaterials.WARRIOR).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Sword");
 	
 	//ARMOR	
+	/**Diamond**/
 	public static Item DiamondHelmet = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 0).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("helmetDiamond").setTextureName("diamond_helmet");
 	public static Item DiamondChestplate = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 1).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("chestplateDiamond").setTextureName("diamond_chestplate");
 	public static Item DiamondLeggings = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 2).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("leggingsDiamond").setTextureName("diamond_leggings");
 	public static Item DiamondBoots = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.DIAMOND, 3, 3).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("bootsDiamond").setTextureName("diamond_boots");
 	/****/
-
+	/**Gold**/
+	public static Item GoldHelmet = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.GOLD, 4, 0).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("helmetGold").setTextureName("gold_helmet");
+	public static Item GoldChestplate = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.GOLD, 4, 1).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("chestplateGold").setTextureName("gold_chestplate");
+	public static Item GoldLeggings = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.GOLD, 4, 2).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("leggingsGold").setTextureName("gold_leggings");
+	public static Item GoldBoots = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.GOLD, 4, 3).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("bootsGold").setTextureName("gold_boots");
+	/**Iron**/
+	public static Item IronHelmet = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.IRON, 2, 0).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("helmetIron").setTextureName("iron_helmet");
+	public static Item IronChestplate = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.IRON, 2, 1).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("chestplateIron").setTextureName("iron_chestplate");
+	public static Item IronLeggings = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.IRON, 2, 2).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("leggingsIron").setTextureName("iron_leggings");
+	public static Item IronBoots = new ItemWarriorArmor(ItemWarriorArmor.ArmorMaterial.IRON, 2, 3).setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("bootsIron").setTextureName("iron_boots");
+	/****/
 	//WIZARD
 	
 	/**TEST**/
