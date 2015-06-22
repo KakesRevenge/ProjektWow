@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.warrior.items;
+package cz.grossik.projektwow.items.warrior;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,7 +17,7 @@ import com.google.common.collect.Multimap;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.help.Reference;
 import cz.grossik.projektwow.items.ToolMaterials;
 
 public class ItemTestSword extends Item

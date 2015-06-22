@@ -6,8 +6,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.handler.PlayerClassHandler;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge

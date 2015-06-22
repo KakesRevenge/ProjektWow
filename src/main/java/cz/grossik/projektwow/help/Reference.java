@@ -1,4 +1,4 @@
-package cz.grossik.projektwow;
+package cz.grossik.projektwow.help;
 
 /**
 @Author KakesRevenge

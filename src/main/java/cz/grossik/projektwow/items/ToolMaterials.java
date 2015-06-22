@@ -4,8 +4,8 @@ import cz.grossik.projektwow.ProjektWow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public enum ToolMaterials
-{
+public enum ToolMaterials {
+	
     WARRIOR(0, 59, 2.0F, 0, 15),
     WIZARD(1, 131, 4.0F, 1, 5),
     THIEF(2, 250, 6.0F, 2, 14),
@@ -30,43 +30,38 @@ public enum ToolMaterials
         this.enchantability = p_i1874_7_;
     }
     
-    public int getMaxUses()
-    {
+    public int getMaxUses() {
         return this.maxUses;
     }
 
-    public float getEfficiencyOnProperMaterial()
-    {
+    public float getEfficiencyOnProperMaterial() {
         return this.efficiencyOnProperMaterial;
     }
 
-    public float getDamageVsEntity()
-    {
+    public float getDamageVsEntity() {
         return this.damageVsEntity;
     }
 
-    public int getHarvestLevel()
-    {
+    public int getHarvestLevel() {
         return this.harvestLevel;
     }
 
-    public int getEnchantability()
-    {
+    public int getEnchantability() {
         return this.enchantability;
     }
+    
     @Deprecated
-    public Item func_150995_f()
-    {
-        switch (this)
-        {
+    public Item func_150995_f() {
+        switch (this) {
             case WARRIOR:
             case WIZARD:
             case THIEF:    
-            default:      return customCraftingMaterial;
+            default:      
+            	return customCraftingMaterial;
         }
     }
-    public ItemStack getRepairItemStack()
-    {
+    
+    public ItemStack getRepairItemStack() {
         if (repairMaterial != null) return repairMaterial;
         Item ret = this.func_150995_f();
         if (ret == null) return null;

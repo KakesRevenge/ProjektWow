@@ -1,6 +1,6 @@
 package cz.grossik.projektwow.handler;
 
-import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.help.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -19,7 +19,6 @@ public class PlayerClassHandler implements IExtendedEntityProperties {
 
 	public PlayerClassHandler(EntityPlayer player) {
 		this.player = player;
-		this.CurrentClass = Reference.Unset;
 	}
 
 	@Override

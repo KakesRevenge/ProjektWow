@@ -5,10 +5,11 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.handler.PlayerClassHandler;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge
@@ -37,16 +38,16 @@ public class GetClass extends CommandBase {
         
         switch (playerclass) {
         case Reference.Thief:
-        	player.addChatComponentMessage(new ChatComponentTranslation("You are Thief"));
+        	player.addChatComponentMessage(new ChatComponentText("You are Thief"));
         	break;
         case Reference.Warrior:
-        	player.addChatComponentMessage(new ChatComponentTranslation("You are Warrior"));
+        	player.addChatComponentMessage(new ChatComponentText("You are Warrior"));
         	break;
         case Reference.Wizard:
-        	player.addChatComponentMessage(new ChatComponentTranslation("You are Wizard"));
+        	player.addChatComponentMessage(new ChatComponentText("You are Wizard"));
         	break;
         case Reference.Unset:
-        	player.addChatComponentMessage(new ChatComponentTranslation("You dont have any class"));
+        	player.addChatComponentMessage(new ChatComponentText("You dont have any class"));
         	break;
         }
     }   

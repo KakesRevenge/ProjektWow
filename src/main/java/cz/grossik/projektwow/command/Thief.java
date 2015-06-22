@@ -4,8 +4,8 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
-import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.handler.PlayerClassHandler;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge

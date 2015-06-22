@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.wizard.items;
+package cz.grossik.projektwow.items.wizard;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,16 +7,16 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import cz.grossik.projektwow.ProjektWow;
+import cz.grossik.projektwow.entity.Fire;
 import cz.grossik.projektwow.handler.ItemHandler;
-import cz.grossik.projektwow.items.Wand;
 
-public class ItemWand extends Wand  {
+public class Wand extends WandBase  {
 
 	public static int cooldown = 15;
 	
 	public static int defaultCharges = 64;
 	
-	public ItemWand() {
+	public Wand() {
 		super();
         this.setMaxDamage(defaultCharges + 1);
 	}

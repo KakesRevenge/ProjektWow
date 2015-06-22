@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.warrior.items;
+package cz.grossik.projektwow.items.warrior;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -7,16 +7,16 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
-import cz.grossik.projektwow.Reference;
 import cz.grossik.projektwow.handler.PlayerClassHandler;
-import cz.grossik.projektwow.utils.LogHelper;
+import cz.grossik.projektwow.help.LogHelper;
+import cz.grossik.projektwow.help.Reference;
 
 /** @Autor Grossik 
  */
-public class ItemWarriorArmor extends ItemArmor {
+public class WarriorArmor extends ItemArmor {
 
 
-	public ItemWarriorArmor(ItemArmor.ArmorMaterial ArmorMaterial, int int1, int int2) {
+	public WarriorArmor(ItemArmor.ArmorMaterial ArmorMaterial, int int1, int int2) {
 		super(ArmorMaterial, int1, int2);
 	}
 

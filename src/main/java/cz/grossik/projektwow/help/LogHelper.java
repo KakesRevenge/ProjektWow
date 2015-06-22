@@ -1,9 +1,8 @@
-package cz.grossik.projektwow.utils;
+package cz.grossik.projektwow.help;
 
 import org.apache.logging.log4j.Level;
 
 import cpw.mods.fml.common.FMLLog;
-import cz.grossik.projektwow.Reference;
 
 /**
 @Author KakesRevenge

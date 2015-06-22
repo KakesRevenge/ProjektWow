@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.warrior.items;
+package cz.grossik.projektwow.items.warrior;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,13 +7,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.World;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.entity.EntityWoodenSpear;
 import cz.grossik.projektwow.handler.ItemHandler;
-import cz.grossik.projektwow.warrior.entity.EntityWoodenSpear;
+import cz.grossik.projektwow.help.Reference;
 
-public class ItemWoodenSpear extends Item{
+public class WoodenSpear extends Item{
 
-	public ItemWoodenSpear() {
+	public WoodenSpear() {
 		this.setMaxStackSize(10);
 	}
 	

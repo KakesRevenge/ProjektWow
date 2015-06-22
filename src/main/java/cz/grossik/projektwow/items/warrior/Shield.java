@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.warrior.items;
+package cz.grossik.projektwow.items.warrior;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,17 +8,17 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge
  */
 
-public class ItemShield extends ItemSword {
+public class Shield extends ItemSword {
 	
 	private IIcon swordIcon,shieldIcon;
 	
-	public ItemShield(ToolMaterial material) {
+	public Shield(ToolMaterial material) {
 		super(material);
 		this.setUnlocalizedName("Shield");
 		this.setCreativeTab(ProjektWow.ProjektWowTab);

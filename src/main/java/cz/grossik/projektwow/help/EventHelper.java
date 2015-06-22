@@ -1,4 +1,4 @@
-package cz.grossik.projektwow.utils;
+package cz.grossik.projektwow.help;
 
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;

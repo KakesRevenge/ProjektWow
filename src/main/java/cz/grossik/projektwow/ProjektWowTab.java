@@ -11,11 +11,12 @@ public class ProjektWowTab extends CreativeTabs {
     public ProjektWowTab(String tabLabel) {
         super(tabLabel);
     }
+    
     @SideOnly(Side.CLIENT)
-    public String getTranslatedTabLabel()
-    {
+    public String getTranslatedTabLabel() {
         return "ProjektWow";
     }
+    
     @Override
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {

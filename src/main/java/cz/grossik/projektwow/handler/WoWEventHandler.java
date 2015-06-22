@@ -3,21 +3,29 @@ package cz.grossik.projektwow.handler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cz.grossik.projektwow.ProjektWow;
-import cz.grossik.projektwow.Reference;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge
  */
 
 public class WoWEventHandler {
+	
+	@SubscribeEvent
+	public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+		NBTTagCompound playerData = event.player.getEntityData();
+    	PlayerClassHandler props = PlayerClassHandler.get(event.player);
+		if (!playerData.hasKey("")) {
+    		props.CurrentClass = Reference.Unset;
+        	playerData.setBoolean("itemGiven", true);
+    	}
+	}
 	
 	@SubscribeEvent
 	public void LivingHurt(LivingHurtEvent event) {
@@ -53,9 +61,6 @@ public class WoWEventHandler {
 			break;
 		case Reference.Wizard:
 			event.displayname = Reference.WizardName + event.username;
-			break;
-		case Reference.Unset:
-			event.displayname = Reference.UnsetName + event.username;
 			break;
 		}
 	}
