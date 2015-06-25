@@ -34,7 +34,7 @@ import cz.grossik.projektwow.worldtype.WoWorldType;
 @Mod(modid = Reference.MODID,name = Reference.NAME, version = Reference.VERSION)
 public class ProjektWow {
 	
-	@SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommo/n")
+	@SidedProxy(clientSide = "cz.grossik.projektwow.proxy.ProxyClient", serverSide = "cz.grossik.projektwow.proxy.ProxyCommon")
     public static ProxyCommon proxy;
 	@Instance(Reference.MODID)
 	public static ProjektWow instance;

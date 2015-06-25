@@ -19,6 +19,7 @@ public class PlayerClassHandler implements IExtendedEntityProperties {
 
 	public PlayerClassHandler(EntityPlayer player) {
 		this.player = player;
+		this.CurrentClass = Reference.Unset;
 	}
 
 	@Override

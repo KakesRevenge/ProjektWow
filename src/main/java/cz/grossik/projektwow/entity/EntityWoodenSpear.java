@@ -26,8 +26,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 import cz.grossik.projektwow.ProjektWow;
 import cz.grossik.projektwow.handler.ItemHandler;
 
-public class EntityWoodenSpear extends Entity implements IProjectile
-{
+public class EntityWoodenSpear extends Entity implements IProjectile {
+	
     private int field_145791_d = -1;
     private int field_145792_e = -1;
     private int field_145789_f = -1;
@@ -43,15 +43,13 @@ public class EntityWoodenSpear extends Entity implements IProjectile
     private int knockbackStrength;
     private static final String __OBFID = "CL_00001715";
 
-    public EntityWoodenSpear(World p_i1753_1_)
-    {
+    public EntityWoodenSpear(World p_i1753_1_) {
         super(p_i1753_1_);
         this.renderDistanceWeight = 10.0D;
         this.setSize(0.5F, 0.5F);
     }
 
-    public EntityWoodenSpear(World p_i1754_1_, double p_i1754_2_, double p_i1754_4_, double p_i1754_6_)
-    {
+    public EntityWoodenSpear(World p_i1754_1_, double p_i1754_2_, double p_i1754_4_, double p_i1754_6_) {
         super(p_i1754_1_);
         this.renderDistanceWeight = 10.0D;
         this.setSize(0.5F, 0.5F);
@@ -59,8 +57,7 @@ public class EntityWoodenSpear extends Entity implements IProjectile
         this.yOffset = 0.0F;
     }
 
-    public EntityWoodenSpear(World p_i1755_1_, EntityLivingBase p_i1755_2_, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_)
-    {
+    public EntityWoodenSpear(World p_i1755_1_, EntityLivingBase p_i1755_2_, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_) {
         super(p_i1755_1_);
         this.renderDistanceWeight = 10.0D;
         this.shootingEntity = p_i1755_2_;
