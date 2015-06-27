@@ -11,7 +11,8 @@ import cz.grossik.projektwow.handler.PlayerClassHandler;
 import cz.grossik.projektwow.help.LogHelper;
 import cz.grossik.projektwow.help.Reference;
 
-/** @Autor Grossik 
+/**
+@Autor Grossik 
  */
 public class WarriorArmor extends ItemArmor {
 

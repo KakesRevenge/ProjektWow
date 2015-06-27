@@ -17,7 +17,6 @@ public abstract class WandBase extends Item {
         this.maxStackSize = 1;
 	}
 	
-	public abstract int getUseCost();
 
     @Override public EnumAction getItemUseAction(ItemStack par1ItemStack)
     {
@@ -28,7 +27,7 @@ public abstract class WandBase extends Item {
 
 
     public boolean isOutOfCharge(ItemStack srcItemStack){
-    	return srcItemStack.getItemDamage() >= (srcItemStack.getMaxDamage() - getUseCost());
+    	return srcItemStack.getItemDamage() >= (srcItemStack.getMaxDamage());
     }
     
     protected void playSound(String soundID, World world, EntityPlayer playerEntity){
@@ -36,8 +35,5 @@ public abstract class WandBase extends Item {
          {
     		 world.playSoundAtEntity(playerEntity, soundID, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
          }
-    }
-    
-    public abstract int getBaseRepairCost();
-    
+    }    
 }

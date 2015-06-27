@@ -4,12 +4,15 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+
 /**
+@Autor Grossik 
 Edited by KakesRevenge
  */
 
@@ -21,6 +24,15 @@ public class EntityFire extends EntityFireball {
         super(world);
     }
 
+	public EntityFire(World par1World, EntityLivingBase par2EntityLivingBase, double posX, double posY, double posZ, double vX, double vY, double vZ) {
+        super(par1World, par2EntityLivingBase, vX, vY, vZ);
+        this.setPosition(posX, posY, posZ);
+        Double d3 = (double)MathHelper.sqrt_double(vX * vX + vY * vY + vZ * vZ);
+        this.accelerationX = vX / d3 * 0.1D;
+        this.accelerationY = vY / d3 * 0.1D;
+        this.accelerationZ = vZ / d3 * 0.1D;
+    }
+	
     @SideOnly(Side.CLIENT)
     public EntityFire(World world, double par2, double par3, double par4, double par5, double par6, double par7) {
         super(world, par2, par3, par4, par5, par6, par7);

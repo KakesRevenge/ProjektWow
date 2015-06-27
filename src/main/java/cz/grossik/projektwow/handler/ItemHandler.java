@@ -9,7 +9,7 @@ import cz.grossik.projektwow.items.warrior.Shield;
 import cz.grossik.projektwow.items.warrior.ItemTestSword;
 import cz.grossik.projektwow.items.warrior.WarriorArmor;
 import cz.grossik.projektwow.items.warrior.WoodenSpear;
-import cz.grossik.projektwow.items.wizard.Wand;
+import cz.grossik.projektwow.items.wizard.FireWand;
 
 public class ItemHandler {
 		
@@ -41,7 +41,7 @@ public class ItemHandler {
 	//WIZARD
 	
 	/**TEST**/
-    public static Item Wand = new Wand().setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Wand");
+    public static Item Wand = new FireWand().setCreativeTab(ProjektWow.ProjektWowTab).setUnlocalizedName("Wand");
 	/****/
 
 	//THIEF
