@@ -19,15 +19,5 @@ public class CommandHandler {
     public static ICommand thief = new Thief();
     public static ICommand getClass = new GetClass();
     public static ICommand unset = new Unset();
-    
-    
-    @EventHandler
-    public void ServerLoad(FMLServerStartingEvent event) {	 
-    	event.registerServerCommand(warrior);
-    	event.registerServerCommand(wizard);
-    	event.registerServerCommand(thief);
-    	event.registerServerCommand(getClass);
-    	event.registerServerCommand(unset);
-    }
 
 }

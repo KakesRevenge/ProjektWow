@@ -1,27 +1,17 @@
 package cz.grossik.projektwow;
 
-import java.io.File;
-
-import net.minecraft.command.ICommand;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cz.grossik.projektwow.command.Thief;
-import cz.grossik.projektwow.command.Unset;
-import cz.grossik.projektwow.command.Warrior;
-import cz.grossik.projektwow.command.Wizard;
-import cz.grossik.projektwow.command.GetClass;
 import cz.grossik.projektwow.entity.EntityWoodenSpear;
+import cz.grossik.projektwow.handler.CommandHandler;
 import cz.grossik.projektwow.handler.GuiHandler;
 import cz.grossik.projektwow.handler.ItemHandler;
 import cz.grossik.projektwow.handler.RecipeHandler;
@@ -48,6 +38,15 @@ public class ProjektWow {
     	NetworkRegistry.INSTANCE.registerGuiHandler(ProjektWow.instance, new GuiHandler());
         ItemHandler.registerItems();
         EventHelper.register(EventHelper.Type.BOTH, new WoWEventHandler());
+    }
+    
+    @EventHandler
+    public void ServerLoad(FMLServerStartingEvent event) {	 
+    	event.registerServerCommand(CommandHandler.warrior);
+    	event.registerServerCommand(CommandHandler.wizard);
+    	event.registerServerCommand(CommandHandler.thief);
+    	event.registerServerCommand(CommandHandler.getClass);
+    	event.registerServerCommand(CommandHandler.unset);
     }
     
 	@EventHandler

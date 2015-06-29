@@ -39,7 +39,7 @@ public class WarriorArmor extends ItemArmor {
             PlayerClassHandler props = PlayerClassHandler.get(player);
             int playerclass = props.CurrentClass;
           
-            if(playerclass == Reference.Warrior) {
+         if(playerclass == Reference.Warrior) {
             	System.out.println("TRUE");
                 return true;
             } else if (playerclass != Reference.Warrior) {
