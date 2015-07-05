@@ -46,12 +46,13 @@ public class ItemHandler {
 
 	//THIEF
 	
-	//ZBYTEK
 	
 	public static void registerItems() {
+		
 		GameRegistry.registerItem(ItemHandler.Sword, "SwordTest");
         GameRegistry.registerItem(ItemHandler.Wand, "WandTest");
         GameRegistry.registerItem(ItemHandler.Shield, "Shield");
+       
         GameRegistry.registerItem(DiamondHelmet, "helmetDiamond");
         GameRegistry.registerItem(DiamondChestplate, "chestplateDiamond");
         GameRegistry.registerItem(DiamondLeggings, "leggingsDiamond");

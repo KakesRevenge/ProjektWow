@@ -19,7 +19,7 @@ import cz.grossik.projektwow.handler.WoWEventHandler;
 import cz.grossik.projektwow.help.EventHelper;
 import cz.grossik.projektwow.help.Reference;
 import cz.grossik.projektwow.proxy.ProxyCommon;
-import cz.grossik.projektwow.worldtype.WoWorldType;
+import cz.grossik.projektwow.worldtype.PWWorldType;
 
 @Mod(modid = Reference.MODID,name = Reference.NAME, version = Reference.VERSION)
 public class ProjektWow {
@@ -51,7 +51,7 @@ public class ProjektWow {
     
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {	
-		WoWorldType.addCustomWorldTypes();
+		PWWorldType.addCustomWorldTypes();
 		RecipeHandler.registerRecipes();
 	}
 }

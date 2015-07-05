@@ -1,11 +1,11 @@
 package cz.grossik.projektwow.handler;
 
-import cz.grossik.projektwow.help.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
+import cz.grossik.projektwow.help.Reference;
 
 /**
 @Author KakesRevenge
@@ -40,7 +40,6 @@ public class PlayerClassHandler implements IExtendedEntityProperties {
 
 	@Override
 	public void init(Entity entity, World world) { 
-		
 	}
 	
 	public static final PlayerClassHandler get(EntityPlayer player) {
