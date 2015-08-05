@@ -18,16 +18,6 @@ import cz.grossik.projektwow.help.Reference;
 public class WoWEventHandler {
 	
 	@SubscribeEvent
-	public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-		NBTTagCompound playerData = event.player.getEntityData();
-    	PlayerClassHandler props = PlayerClassHandler.get(event.player);
-		if (!playerData.hasKey("")) {
-    		props.CurrentClass = Reference.Unset;
-        	playerData.setBoolean("itemGiven", true);
-    	}
-	}
-	
-	@SubscribeEvent
 	public void LivingHurt(LivingHurtEvent event) {
 		if(event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)event.entityLiving;
